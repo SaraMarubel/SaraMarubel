@@ -1,4 +1,4 @@
-<h1 align="center">Hi, I'm Sarah 👋</h1>
+<h1 align="center">Sarah Beltran </h1>
 <p align="center"><i>Physics student and AI Domain researcher, publishing projects undertaken in both my Finance and Astrophysics sectors of work.</i></p>
 
 <br>
