@@ -11,7 +11,7 @@ Real-time simulated candlestick chart for Microsoft with an SMA(9/21) + RSI algo
 [<img src="assets/msft-algo-trader.gif" width="100%" alt="MSFT Algo Trader live preview">](https://saramarubel.github.io/msft-algo-trader/)
 <p><a href="https://saramarubel.github.io/msft-algo-trader/">🔗 Live demo</a></p>
 
-### [Equity Research Report — TSMC](https://github.com/SaraMarubel/equity-research-report)
+### [LIVE Updating Equity Research Report — TSMC](https://github.com/SaraMarubel/equity-research-report)
 A full narrative equity research report on TSMC — business model, financials, competitive landscape, and geopolitical risk — built as a live static webpage instead of a downloadable PDF.
 
 [<img src="assets/equity-research-report.gif" width="100%" alt="Equity Research Report live preview">](https://saramarubel.github.io/equity-research-report/)
