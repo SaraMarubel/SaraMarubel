@@ -93,28 +93,29 @@ def capture_pizza(page):
     return frames
 
 
-with sync_playwright() as p:
-    browser = p.chromium.launch()
-    page = browser.new_page(viewport=VIEWPORT)
+if __name__ == "__main__":
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page(viewport=VIEWPORT)
 
-    print("Capturing msft-algo-trader...")
-    save_gif(capture_msft_trader(page), os.path.join(OUT_DIR, "msft-algo-trader.gif"))
+        print("Capturing msft-algo-trader...")
+        save_gif(capture_msft_trader(page), os.path.join(OUT_DIR, "msft-algo-trader.gif"))
 
-    print("Capturing equity-research-report...")
-    save_gif(
-        capture_scroll(page, "https://saramarubel.github.io/equity-research-report/"),
-        os.path.join(OUT_DIR, "equity-research-report.gif"),
-        duration_ms=280,
-    )
+        print("Capturing equity-research-report...")
+        save_gif(
+            capture_scroll(page, "https://saramarubel.github.io/equity-research-report/"),
+            os.path.join(OUT_DIR, "equity-research-report.gif"),
+            duration_ms=280,
+        )
 
-    print("Capturing ETF-basket-analysis...")
-    save_gif(
-        capture_scroll(page, "https://saramarubel.github.io/ETF-basket-analysis/"),
-        os.path.join(OUT_DIR, "ETF-basket-analysis.gif"),
-        duration_ms=280,
-    )
+        print("Capturing ETF-basket-analysis...")
+        save_gif(
+            capture_scroll(page, "https://saramarubel.github.io/ETF-basket-analysis/"),
+            os.path.join(OUT_DIR, "ETF-basket-analysis.gif"),
+            duration_ms=280,
+        )
 
-    print("Capturing Customer-Interface-system1...")
-    save_gif(capture_pizza(page), os.path.join(OUT_DIR, "Customer-Interface-system1.gif"), duration_ms=250)
+        print("Capturing Customer-Interface-system1...")
+        save_gif(capture_pizza(page), os.path.join(OUT_DIR, "Customer-Interface-system1.gif"), duration_ms=250)
 
-    browser.close()
+        browser.close()

@@ -32,6 +32,12 @@ Classifies stars, galaxies, and black holes using real astrophysical techniques 
 
 [![Source](https://img.shields.io/badge/Source-Repo-blue?style=for-the-badge)](https://github.com/SaraMarubel/galaxy-classification)
 
+### [Starship Mars Transit — Mission Simulator](https://github.com/SaraMarubel/starship-mars-transit)
+A live 3D mission simulator (Three.js): a Starship-style vehicle flies Earth → Mars orbit → Earth on a black-space background, with Earth/Moon/Mars rendered at their true relative size ratio and a mission-control sidebar tracking stage, speed, acceleration, heading, and velocity in real time.
+
+[<img src="assets/starship-mars-transit.gif" width="100%" alt="Starship Mars Transit live preview">](https://saramarubel.github.io/starship-mars-transit/)
+<p><a href="https://saramarubel.github.io/starship-mars-transit/">🔗 Live demo</a></p>
+
 <br>
 
 ## 🧪 Other builds
