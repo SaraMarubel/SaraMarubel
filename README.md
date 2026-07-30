@@ -3,7 +3,7 @@
 
 <br>
 
-## 💰 Finance
+##  Finance Projects
 
 ### [MSFT Algo Trader](https://github.com/SaraMarubel/msft-algo-trader)
 Real-time simulated candlestick chart for Microsoft with an SMA(9/21) + RSI algorithmic strategy that auto-trades paper positions, plus a broader tech portfolio view across AAPL, GOOGL, AMZN, NVDA, and META.
@@ -25,7 +25,7 @@ A trading-desk-style dashboard covering the 20 largest ETFs by AUM: composition,
 
 <br>
 
-## 🔭 Astrophysics
+##  Astrophysics Projects
 
 ### [Galaxy Classification](https://github.com/SaraMarubel/galaxy-classification)
 Classifies stars, galaxies, and black holes using real astrophysical techniques — the 21 cm hyperfine line for galaxy rotation, effective temperature for stellar spectral typing, and mass / Schwarzschild radius for black hole size classes.
