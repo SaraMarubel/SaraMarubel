@@ -6,7 +6,7 @@
 ##  Finance Projects
 
 ### [MSFT Algo Trader](https://github.com/SaraMarubel/msft-algo-trader)
-Real-time simulated candlestick chart trading from market open LIVE feed with a tunable SMA/RSI algorithmic strategy that enables it on any of AAPL, GOOGL, AMZN, NVDA, and META too, inspect the strategy logic and set your own parameters, issue TWAP "dump position" / "accumulate" commands, and track it all against a live NYSE market clock.
+Real-time simulated candlestick chart trading from market open, with a tunable SMA/RSI algorithmic strategy that enables it on any of AAPL, GOOGL, AMZN, NVDA, and META too, inspect the strategy logic and set your own parameters, issue TWAP "dump position" / "accumulate" commands, and track it all against a live NYSE market clock.
 
 [<img src="assets/msft-algo-trader.gif" width="100%" alt="MSFT Algo Trader live preview">](https://saramarubel.github.io/msft-algo-trader/)
 <p><a href="https://saramarubel.github.io/msft-algo-trader/">🔗 Live demo</a></p>
