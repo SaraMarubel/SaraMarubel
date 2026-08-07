@@ -78,8 +78,8 @@ def capture_equity_report(page, url, settle_ms=650):
     """Slower, feature-tour capture for the TSMC equity research report:
     scroll through the cover/exec summary, pause on the new peer-comparison
     table and quant/risk profile section, show a glossary hover tooltip,
-    peek at the live news feed, then demo the dark-mode toggle before
-    scrolling back to the top for a clean loop."""
+    peek at the live news feed, then scroll back to the top for a clean
+    loop. No dark-mode demo — light mode only."""
     page.goto(url, wait_until="networkidle")
     page.wait_for_timeout(1200)
     frames = [page.screenshot()]
@@ -113,17 +113,11 @@ def capture_equity_report(page, url, settle_ms=650):
     except Exception:
         pass
 
-    # Demo the dark-mode toggle.
+    # Scroll back to the top for a clean loop.
     page.evaluate("window.scrollTo({top: 0, behavior: 'smooth'})")
     page.wait_for_timeout(900)
     frames.append(page.screenshot())
-    page.click("#theme-toggle")
-    page.wait_for_timeout(500)
-    frames.append(page.screenshot())
     page.wait_for_timeout(settle_ms)
-    frames.append(page.screenshot())
-    page.click("#theme-toggle")  # back to light for a clean loop
-    page.wait_for_timeout(700)
     frames.append(page.screenshot())
 
     return frames
