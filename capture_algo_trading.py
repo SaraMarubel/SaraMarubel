@@ -2,7 +2,7 @@ import os
 from playwright.sync_api import sync_playwright
 from capture_gif import save_gif, OUT_DIR, VIEWPORT
 
-URL = "https://saramarubel.github.io/quant-momentum-engine/"
+URL = "https://saramarubel.github.io/algo-trading-engine/"
 TARGET_RETURN_PCT = 1.0   # keep reloading (fresh backfill) until P&L looks this good
 MAX_ATTEMPTS = 30
 
@@ -47,4 +47,4 @@ with sync_playwright() as p:
     frames.append(page.screenshot())
 
     browser.close()
-    save_gif(frames, os.path.join(OUT_DIR, "quant-momentum-engine.gif"), duration_ms=160)
+    save_gif(frames, os.path.join(OUT_DIR, "algo-trading-engine.gif"), duration_ms=160)
