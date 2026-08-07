@@ -74,6 +74,61 @@ def capture_scroll(page, url, scroll_steps=14, step_px=140, settle_ms=350):
     return frames
 
 
+def capture_equity_report(page, url, settle_ms=650):
+    """Slower, feature-tour capture for the TSMC equity research report:
+    scroll through the cover/exec summary, pause on the new peer-comparison
+    table and quant/risk profile section, show a glossary hover tooltip,
+    peek at the live news feed, then demo the dark-mode toggle before
+    scrolling back to the top for a clean loop."""
+    page.goto(url, wait_until="networkidle")
+    page.wait_for_timeout(1200)
+    frames = [page.screenshot()]
+
+    # Scroll down through the report in modest steps so viewers can actually
+    # read headings as they pass, pausing longer over the new sections.
+    section_ids = [
+        "company-overview", "business-model", "financials",
+        "peer-comparison", "peer-comparison", "quant-risk", "quant-risk",
+        "industry", "geopolitics", "environmental", "risks",
+        "live-news", "live-news", "valuation",
+    ]
+    for sec_id in section_ids:
+        page.evaluate(f"""() => {{
+            const el = document.getElementById('{sec_id}');
+            if (el) el.scrollIntoView({{behavior: 'smooth', block: 'start'}});
+        }}""")
+        page.wait_for_timeout(settle_ms)
+        frames.append(page.screenshot())
+
+    # Hover a glossary term to show the tooltip in a couple of frames.
+    try:
+        term = page.locator(".term").first
+        term.scroll_into_view_if_needed()
+        page.wait_for_timeout(300)
+        term.hover()
+        page.wait_for_timeout(200)
+        frames.append(page.screenshot())
+        page.wait_for_timeout(400)
+        frames.append(page.screenshot())
+    except Exception:
+        pass
+
+    # Demo the dark-mode toggle.
+    page.evaluate("window.scrollTo({top: 0, behavior: 'smooth'})")
+    page.wait_for_timeout(900)
+    frames.append(page.screenshot())
+    page.click("#theme-toggle")
+    page.wait_for_timeout(500)
+    frames.append(page.screenshot())
+    page.wait_for_timeout(settle_ms)
+    frames.append(page.screenshot())
+    page.click("#theme-toggle")  # back to light for a clean loop
+    page.wait_for_timeout(700)
+    frames.append(page.screenshot())
+
+    return frames
+
+
 def capture_pizza(page):
     page.goto("https://saramarubel.github.io/Customer-Interface-system1/", wait_until="networkidle")
     page.wait_for_timeout(800)
@@ -103,9 +158,9 @@ if __name__ == "__main__":
 
         print("Capturing equity-research-report...")
         save_gif(
-            capture_scroll(page, "https://saramarubel.github.io/equity-research-report/"),
+            capture_equity_report(page, "https://saramarubel.github.io/equity-research-report/"),
             os.path.join(OUT_DIR, "equity-research-report.gif"),
-            duration_ms=280,
+            duration_ms=650,  # ~2.3x slower than the original 280ms cadence
         )
 
         print("Capturing ETF-basket-analysis...")
