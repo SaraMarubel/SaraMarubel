@@ -18,7 +18,7 @@ An equity research report on TSMC (NYSE: TSM) structured the way a sell-side or 
 <p><a href="https://saramarubel.github.io/equity-research-report/">🔗 Live demo</a></p>
 
 ### [ETF Basket Analysis](https://github.com/SaraMarubel/ETF-basket-analysis)
-A trading-desk-style dashboard covering the 20 largest ETFs by AUM: composition, risk/trading metrics, a cross-fund correlation matrix, and a side-by-side comparison tool.
+A trading-desk-style dashboard covering the 20 largest ETFs by assets under management, computing the same risk metrics a real trading desk tracks — beta and volatility against the S&P 500, Sharpe ratio, max drawdown, tracking error versus each fund's own benchmark index, live bid-ask spreads, and an options-market snapshot (implied volatility, open interest, put/call ratio) — alongside a 20×20 cross-fund correlation matrix, a side-by-side comparison tool with holdings-overlap percentage, and full sector/top-10-holdings composition breakdowns. Every fund also carries a written profile (manager, structural success factors, political/policy exposure) and a live, topic-grouped news feed. All market, risk, and options data is pulled through the Yahoo Finance API via `yfinance`, with live news from the NewsAPI.org REST API; both refresh automatically every 4 hours via a scheduled GitHub Actions workflow. Built with vanilla HTML/CSS/JS — sortable/filterable grid, hover-triggered glossary, light/dark theming, and a print-ready one-pager per fund, no framework or build step.
 
 [<img src="assets/ETF-basket-analysis.gif" width="100%" alt="ETF Basket Analysis live preview">](https://saramarubel.github.io/ETF-basket-analysis/)
 <p><a href="https://saramarubel.github.io/ETF-basket-analysis/">🔗 Live demo</a></p>
