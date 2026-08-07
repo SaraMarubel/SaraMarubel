@@ -2,9 +2,9 @@ import os
 from playwright.sync_api import sync_playwright
 from capture_gif import save_gif, OUT_DIR, VIEWPORT
 
-URL = "https://saramarubel.github.io/msft-algo-trader/"
-TARGET_RETURN_PCT = 1.2   # keep reloading (fresh backfill) until P&L looks this good
-MAX_ATTEMPTS = 25
+URL = "https://saramarubel.github.io/quant-momentum-engine/"
+TARGET_RETURN_PCT = 1.0   # keep reloading (fresh backfill) until P&L looks this good
+MAX_ATTEMPTS = 30
 
 
 def pnl_pct(page):
@@ -33,9 +33,9 @@ with sync_playwright() as p:
         frames.append(page.screenshot())
         page.wait_for_timeout(350)
 
-    # scroll down (in steps, so the GIF shows the motion) to reveal the
-    # rest of the tracked portfolio, then select another ticker
-    for _ in range(4):
+    # scroll down (in steps, so the GIF shows the motion) past the rest of
+    # the tracked portfolio and the new performance panel, then switch ticker
+    for _ in range(6):
         page.mouse.wheel(0, 220)
         page.wait_for_timeout(220)
         frames.append(page.screenshot())
@@ -47,4 +47,4 @@ with sync_playwright() as p:
     frames.append(page.screenshot())
 
     browser.close()
-    save_gif(frames, os.path.join(OUT_DIR, "msft-algo-trader.gif"), duration_ms=160)
+    save_gif(frames, os.path.join(OUT_DIR, "quant-momentum-engine.gif"), duration_ms=160)

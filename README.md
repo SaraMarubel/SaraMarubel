@@ -5,11 +5,11 @@
 
 ##  Finance Projects
 
-### [MSFT Algo Trader](https://github.com/SaraMarubel/msft-algo-trader)
-Real-time simulated candlestick chart trading from market open, with a tunable SMA/RSI algorithmic strategy that enables it on any of AAPL, GOOGL, AMZN, NVDA, and META, inspect the strategy logic and set your own parameters, issue TWAP "dump position" / "accumulate" commands, and track it all against a live NYSE market clock. Also updates user on financial reasoning pathway consideration, with text output, for legible guidance.
+### [Quant Momentum Engine](https://github.com/SaraMarubel/quant-momentum-engine)
+A systematic long-only momentum strategy — SMA(9/21) crossover gated by a 50-period trend filter and an RSI(14) regime filter, with layered risk management (hard stop-loss, trailing stop, take-profit ceiling, re-entry cooldown) and fixed-fractional position sizing — trading a 6-name tech universe from market open against a live NYSE clock. Every parameter is tunable and persists client-side per ticker; large manual orders route through TWAP-sliced execution to reduce market impact, and a performance panel reports win rate, realized P&L, and trade-level attribution on a 3-hour cadence.
 
-[<img src="assets/msft-algo-trader.gif" width="100%" alt="MSFT Algo Trader live preview">](https://saramarubel.github.io/msft-algo-trader/)
-<p><a href="https://saramarubel.github.io/msft-algo-trader/">🔗 Live demo</a></p>
+[<img src="assets/quant-momentum-engine.gif" width="100%" alt="Quant Momentum Engine live preview">](https://saramarubel.github.io/quant-momentum-engine/)
+<p><a href="https://saramarubel.github.io/quant-momentum-engine/">🔗 Live demo</a></p>
 
 ### [LIVE Updating Equity Research Report — TSMC](https://github.com/SaraMarubel/equity-research-report)
 An equity research report on TSMC (NYSE: TSM) structured the way a sell-side or quant research desk would actually cover it: business model and structural analysis (foundry economics, process-node roadmap, supply-chain dependencies), a live peer-comparison table benchmarking TSMC against Intel, Samsung Electronics, GlobalFoundries, UMC, and ASML on valuation multiples and margins, and a quantitative risk profile computing beta against both the S&P 500 and the SOXX semiconductor index, annualized volatility, Sharpe ratio, max drawdown, and cross-asset return correlation directly from price history — plus the geopolitical, regulatory, and environmental risk sections most retail-style dashboards skip entirely. Live market, valuation, and peer data is pulled through the Yahoo Finance API via the `yfinance` Python library, with a topic-grouped live news feed from the NewsAPI.org REST API — both refreshed every four hours by a cron-scheduled GitHub Actions workflow that commits fresh JSON to the repo — and rendered by a hand-written HTML/CSS/vanilla JS frontend with no framework or build step, including canvas-based charts and a hover-triggered glossary client-side.
