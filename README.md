@@ -1,5 +1,15 @@
-<h1 align="center">Sarah Beltran </h1>
-<p align="center"><i>Physics student and AI Domain researcher, publishing projects undertaken in both my Finance and Astrophysics sectors of work.</i></p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+  <img src="assets/banner-light.svg" width="100%" alt="Sarah Beltran — Physics student and AI domain researcher, Finance and Astrophysics builds">
+</picture>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-1c2038?style=flat-square&logo=python&logoColor=ffd27a" alt="Python">
+  <img src="https://img.shields.io/badge/TypeScript-1c2038?style=flat-square&logo=typescript&logoColor=9fd8ff" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Node.js-1c2038?style=flat-square&logo=nodedotjs&logoColor=8fd8a0" alt="Node.js">
+  <img src="https://img.shields.io/badge/Quant%20%2F%20Finance-1c2038?style=flat-square&logo=chartdotjs&logoColor=e8a97c" alt="Quant / Finance">
+  <img src="https://img.shields.io/badge/MCP%20%2F%20AI%20Integrations-1c2038?style=flat-square&logo=anthropic&logoColor=c9a6ff" alt="MCP / AI Integrations">
+</p>
 
 <br>
 
