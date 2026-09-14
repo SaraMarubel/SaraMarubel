@@ -25,6 +25,16 @@ A trading-desk-style dashboard covering the 20 largest ETFs by AUM: beta, volati
 
 <br>
 
+## 🔌 Client Engineering & Integrations
+
+### [HubSpot CRM MCP Server](https://github.com/SaraMarubel/hubspot-crm-mcp-server)
+An MCP (Model Context Protocol) server connecting Claude directly to a real HubSpot CRM: 10 tools with full search/create/update coverage across contacts, deals, and support tickets, plus a cross-object `get_account_summary` tool that stitches a contact's profile, deals, and tickets into one brief instead of three separate CRM tabs. Built with the official MCP TypeScript SDK and a dependency-light REST client (no HubSpot SDK) against HubSpot's v3/v4 API, with Zod-validated tool inputs and 26 unit tests running against a mocked `fetch` — CI needs no live credentials, and the server was separately verified end-to-end against HubSpot's real API via a live MCP client over stdio. The kind of integration a client/solutions engineer actually ships for an enterprise customer, not a demo script.
+
+[<img src="assets/hubspot-crm-mcp-server.gif" width="100%" alt="HubSpot CRM MCP Server live preview">](https://saramarubel.github.io/hubspot-crm-mcp-server/)
+<p><a href="https://saramarubel.github.io/hubspot-crm-mcp-server/">🔗 Live demo</a></p>
+
+<br>
+
 ##  Astrophysics Projects
 
 ### [Galaxy Classification](https://github.com/SaraMarubel/galaxy-classification)
